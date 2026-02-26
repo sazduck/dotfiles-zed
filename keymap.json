@@ -19,9 +19,9 @@
     },
   },
   {
-    "context": "Editor && vim_mode == insert",
+    "context": "VimControl && renaming",
     "bindings": {
-      // "j k": "vim::NormalBefore",
+      "ctrl-[": "menu::Cancel",
     },
   },
 ]
