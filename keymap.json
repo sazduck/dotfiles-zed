@@ -19,9 +19,39 @@
     },
   },
   {
-    "context": "VimControl && renaming",
+    "context": "(Editor && edit_prediction)",
     "bindings": {
-      "ctrl-[": "menu::Cancel",
+      "tab": null,
     },
   },
+  {
+    "context": "(Editor && showing_completions)",
+    "bindings": {
+      "tab": null,
+    },
+  },
+  {
+    "context": "(((Editor && in_snippet) && has_next_tabstop) && showing_completions)",
+    "bindings": {
+      "tab": "editor::NextSnippetTabstop",
+    },
+  },
+  {
+    "context": "(((Editor && in_snippet) && has_next_tabstop) && !showing_completions)",
+    "bindings": {
+      "tab": "editor::NextSnippetTabstop",
+    },
+  },
+  {
+    "context": "(Editor && vim_mode == visual)",
+    "bindings": {
+      "ctrl-shift-c": "editor::Copy"
+    }
+  },
+  {
+    "context": "(Editor && mode == full)",
+    "bindings": {
+      "alt-z": "editor::ToggleSoftWrap"
+    }
+  }
 ]

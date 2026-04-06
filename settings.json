@@ -7,10 +7,17 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "preferred_line_length": 80,
-  "sticky_scroll": {
-    "enabled": false,
+  "diagnostics": {
+    "inline": {
+      "enabled": true
+    }
   },
+  "debugger": {
+    "dock": "left"
+  },
+  "colorize_brackets": true,
+  "soft_wrap": "preferred_line_length",
+  "preferred_line_length": 80,
   "document_folding_ranges": "on",
   "semantic_tokens": "combined",
   "preview_tabs": {
@@ -22,15 +29,12 @@
     "file_icons": true,
     "git_status": true,
   },
-  "title_bar": {
-    "show_user_menu": true,
-    "show_branch_icon": false,
-  },
   "calls": {
     "mute_on_join": true,
   },
   "use_system_path_prompts": true,
   "indent_guides": {
+    "background_coloring": "disabled",
     "coloring": "indent_aware",
   },
   "show_wrap_guides": true,
@@ -41,26 +45,45 @@
     "enabled": true,
   },
   "buffer_line_height": "comfortable",
-  "soft_wrap": "preferred_line_length",
   "project_panel": {
+    "dock": "left",
     "indent_size": 20.0,
     "entry_spacing": "comfortable",
   },
   "languages": {
     "Go": {
       "soft_wrap": "editor_width",
-      "preferred_line_length": 80,
     },
     "Vue.js": {},
     "TSX": {
       "tab_size": 2,
+      // "inlay_hints": { "enabled": true },
+    },
+    "TypeScript": {
+      "tab_size": 2,
+      // "inlay_hints": { "enabled": true },
     },
     "JavaScript": {
       "tab_size": 2,
+      // "inlay_hints": { "enabled": true },
     },
     "Rust": {
       "inlay_hints": {
         "enabled": true,
+      },
+    },
+    "Python": {
+      "inlay_hints": { "enabled": true },
+    },
+  },
+  "lsp": {
+    "ruff": {
+      "initialization_options": {
+        "settings": {
+          "format": {
+            "quoteStyle": "single",
+          },
+        },
       },
     },
   },
@@ -77,11 +100,14 @@
   "terminal": {
     "shell": "system",
     "dock": "bottom",
-    "font_family": "JetBrainsMono NFM",
+    "font_family": "JetBrainsMono Nerd Font Mono",
+    "font_features": {
+      "calt": false,
+    },
   },
   "ui_font_weight": 400.0,
-  "ui_font_family": "Helvetica Neue",
-  "buffer_font_family": "JetBrainsMono NFM",
+  "ui_font_family": ".SystemUIFont",
+  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
   "session": {
     "trust_all_worktrees": true,
   },
@@ -91,10 +117,10 @@
     "use_system_clipboard": "never",
     "toggle_relative_line_numbers": true,
   },
-  "ui_font_size": 18.0,
-  "buffer_font_size": 16.0,
+  "ui_font_size": 16.0,
+  "buffer_font_size": 14.0,
   "theme": {
-    "mode": "dark",
+    "mode": "system",
     "light": "Catppuccin Latte",
     "dark": "Catppuccin Mocha",
   },
