@@ -7,51 +7,79 @@
 // from the command palette.
 [
   {
-    "context": "VimControl && vim_mode == normal && Editor",
-    "bindings": {
-      "space r": "editor::Rename",
-    },
-  },
-  {
     "context": "CommandPalette",
     "bindings": {
       "ctrl-[": "command_palette::Toggle",
     },
   },
+  // {
+  //   "context": "Editor && edit_prediction)",
+  //   "bindings": {
+  //     "tab": null,
+  //   },
+  // },
+  // {
+  //   "context": "(Editor && showing_completions)",
+  //   "bindings": {
+  //     "tab": null,
+  //   },
+  // },
   {
-    "context": "(Editor && edit_prediction)",
-    "bindings": {
-      "tab": null,
-    },
-  },
-  {
-    "context": "(Editor && showing_completions)",
-    "bindings": {
-      "tab": null,
-    },
-  },
-  {
-    "context": "(((Editor && in_snippet) && has_next_tabstop) && showing_completions)",
-    "bindings": {
-      "tab": "editor::NextSnippetTabstop",
-    },
-  },
-  {
-    "context": "(((Editor && in_snippet) && has_next_tabstop) && !showing_completions)",
+    "context": "Editor && in_snippet && has_next_tabstop",
     "bindings": {
       "tab": "editor::NextSnippetTabstop",
     },
-  },
-  {
-    "context": "(Editor && vim_mode == visual)",
-    "bindings": {
-      "ctrl-shift-c": "editor::Copy"
-    }
   },
   {
     "context": "(Editor && mode == full)",
     "bindings": {
-      "alt-z": "editor::ToggleSoftWrap"
-    }
-  }
+      "alt-z": "editor::ToggleSoftWrap",
+    },
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-alt-z": "workspace::ToggleVimMode",
+    },
+  },
+  {
+    "context": "Editor && !menu",
+    "bindings": {
+      "ctrl-shift-c": "editor::Copy",
+      "ctrl-shift-v": "editor::Paste",
+      "ctrl-shift-a": "editor::SelectAll",
+      "ctrl-shift-x": "editor::Cut",
+      "ctrl-y": "editor::Redo", // vim default: line up
+      "ctrl-e": "file_finder::Toggle", // vim default: line down
+    },
+  },
+  {
+    "context": "Editor && !menu",
+    "bindings": {
+      "ctrl-[": "editor::Cancel",
+    },
+    "unbind": {
+      "ctrl-[": "editor::Outdent",
+    },
+  },
+
+  {
+    "context": "!Terminal",
+    "bindings": {
+      "alt-b": "workspace::ToggleLeftDock",
+    },
+  },
+  {
+    "context": "Editor && edit_prediction && edit_prediction_mode == eager && !showing_completions",
+    "unbind": {
+      "tab": "editor::AcceptEditPrediction",
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-p": ["terminal::SendKeystroke", "ctrl-p"],
+      "ctrl-n": ["terminal::SendKeystroke", "ctrl-n"],
+    },
+  },
 ]
