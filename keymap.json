@@ -76,10 +76,27 @@
     },
   },
   {
-    "context": "Terminal",
+    "context": "Workspace && !Terminal",
     "bindings": {
-      "ctrl-p": ["terminal::SendKeystroke", "ctrl-p"],
-      "ctrl-n": ["terminal::SendKeystroke", "ctrl-n"],
+      "ctrl-p": "file_finder::Toggle",
+    },
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "ctrl-p": "file_finder::Toggle",
+    },
+  },
+  {
+    "context": "Terminal",
+    "unbind": {
+      "ctrl-n": "workspace::NewTerminal",
+    },
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "ctrl-n": "workspace::NewFile",
     },
   },
 ]
