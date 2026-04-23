@@ -99,4 +99,19 @@
       "ctrl-n": "workspace::NewFile",
     },
   },
+  {
+    "context": "Editor",
+    "unbind": {
+      "ctrl-[": "editor::Outdent",
+    },
+    "bindings": {
+      "ctrl-[": "editor::Cancel",
+    },
+  },
+  {
+    "context": "InlineAssistant",
+    "unbind": {
+      "ctrl-[": "agent::CyclePreviousInlineAssist",
+    },
+  },
 ]
