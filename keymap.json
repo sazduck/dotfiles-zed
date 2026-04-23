@@ -104,9 +104,6 @@
     "unbind": {
       "ctrl-[": "editor::Outdent",
     },
-    "bindings": {
-      "ctrl-[": "editor::Cancel",
-    },
   },
   {
     "context": "InlineAssistant",
