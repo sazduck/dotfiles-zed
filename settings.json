@@ -7,6 +7,12 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "disable_ai": true,
+  "cli_default_open_behavior": "existing_window",
+  "edit_predictions": {
+    "provider": "zed",
+    "mode": "eager",
+  },
   "diff_view_style": "split",
   "agent_servers": {
     "your_agent": {
@@ -28,8 +34,8 @@
   "buffer_font_family": "JetBrainsMono Nerd Font Mono",
   "buffer_line_height": "comfortable",
   "theme": {
-    "mode": "system",
-    "light": "Catppuccin Latte",
+    "mode": "light",
+    "light": "Catppuccin Latte - No Italics",
     "dark": "Catppuccin Mocha",
   },
   "soft_wrap": "preferred_line_length",
@@ -80,14 +86,23 @@
     "Go": {
       "soft_wrap": "editor_width",
     },
-    "Vue.js": {},
     "TSX": {
       "tab_size": 2,
-      // "inlay_hints": { "enabled": true },
+      "language_servers": [
+        "tsgo",
+        "!vtsls",
+        "!typescript-language-server",
+        "...",
+      ],
     },
     "TypeScript": {
       "tab_size": 2,
-      // "inlay_hints": { "enabled": true },
+      "language_servers": [
+        "tsgo",
+        "!vtsls",
+        "!typescript-language-server",
+        "...",
+      ],
     },
     "JavaScript": {
       "tab_size": 2,
@@ -101,6 +116,7 @@
     "Python": {
       "inlay_hints": { "enabled": true },
     },
+    "Svelte": {},
   },
   "lsp": {
     "ruff": {
@@ -117,7 +133,7 @@
     "dock": "left",
   },
   "icon_theme": {
-    "mode": "system",
+    "mode": "light",
     "light": "Catppuccin Latte",
     "dark": "Catppuccin Mocha",
   },
@@ -125,10 +141,7 @@
   "windows": {
     "terminal": {
       "shell": {
-        "with_arguments": {
-          "program": "pwsh",
-          "args": ["-NoLogo"],
-        },
+        "program": "pwsh",
       },
     },
   },
